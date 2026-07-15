@@ -25,3 +25,18 @@ graph TD
 
     style G fill:#f96,stroke:#333,stroke-width:2px
     style H fill:#9f9,stroke:#333,stroke-width:2px ```
+
+
+
+
+# Walking Buddy: Onboarding Architecture
+
+## 1. Onboarding Flow Summary
+| Phase | User Action | Backend Architecture | State |
+| :--- | :--- | :--- | :--- |
+| **Identity Gate** | Sign up/in via Phone OTP | **Auth Service**: JWT Auth + PostgreSQL `Users` table check | PENDING |
+| **Verification** | Perform ID scan | **Verification Microservice**: 3rd-party API trigger; DB `is_verified` update | VETTED |
+| **Profiling** | Select Pace & Availability | **Profile Service**: Write to `User_Preferences` (PostgreSQL) | VETTED |
+| **Permission** | Grant Location Access | **Location Service**: Initialize client settings; **Redis GEO** push | VETTED |
+| **Activation** | Accept Code of Conduct | **Event Trigger**: Set `reliability_score` (1.0); Redirect to Home | LIVE |
+
