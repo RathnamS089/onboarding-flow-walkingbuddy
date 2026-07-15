@@ -1,5 +1,5 @@
 # onboarding-flow-walkingbuddy
-
+```mermaid
 graph TD
     A[Start: Sign Up] --> B{Identity Gate}
     B -->|Phone OTP| C[Verification: ID Scan]
@@ -24,4 +24,4 @@ graph TD
     F --- F_Action
 
     style G fill:#f96,stroke:#333,stroke-width:2px
-    style H fill:#9f9,stroke:#333,stroke-width:2px
+    style H fill:#9f9,stroke:#333,stroke-width:2px ```
